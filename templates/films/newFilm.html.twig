@@ -1,0 +1,12 @@
+{% extends "films/baseFilm.html.twig" %}
+
+{% block contenido %}
+
+{% for message in app.flashes('exito') %}
+<p>{{ message }}</p>
+{% endfor %}
+    
+
+{{ form(flilmForm) }}
+
+{% endblock %}

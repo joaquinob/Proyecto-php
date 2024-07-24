@@ -1,0 +1,33 @@
+
+{% extends "films/baseFilms.html.twig" %}
+
+{% block contenido %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center"><img src="{{ film.poster }}"> </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2>{{ film.title }}</h2>
+                        <h2>{{ film.director }}</h2>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">{{ film.mainActors }}</div>
+                             <div class="col"><h5>Año {{ film.year }},  {{film.genres}}</h5></div>
+                             <p>{{film.synopsis }}</p>
+
+                        </div>
+                        <div class="row">
+                            <ul>
+                            {% for z in  film.stars %}
+                             <h5>Calificación {{z.stars}}</h5>
+                             {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}            
