@@ -7,7 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Piso>
+ * @extends ServiceEntityRepository<Film>
  */
 class FilmRepository extends ServiceEntityRepository
 {
@@ -17,22 +17,23 @@ class FilmRepository extends ServiceEntityRepository
     }
 
     /**
-    * @return Film[] Returns an array of Film objects
-    */
-    public function findByExampleField($value): array{
-        return $this
-            ->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+     * @return Film[] Returns an array of Film objects
+     */
+    public function findByExampleField(string $value): array
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.title = :val')  // Assuming you want to filter by title
             ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
+            ->orderBy('f.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult();
     }
 
-    public function findOneBySomeField($value): ?Film{
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+    public function findOneBySomeField(string $value): ?Film
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.title = :val')  // Assuming you want to filter by title
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult();

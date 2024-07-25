@@ -9,7 +9,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FilmRepository::class)]
-class Film{
+class Film
+{
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -24,10 +25,10 @@ class Film{
     #[ORM\Column(length: 4)]
     private ?int $year = null;
 
-    #[ORM\Column]
+    #[ORM\Column(length: 255)]
     private ?string $director = null;
 
-    #[ORM\Column]
+    #[ORM\Column(length: 255)]
     private ?string $mainActors = null;
 
     #[ORM\Column(length: 255)]
@@ -39,99 +40,99 @@ class Film{
     /**
      * @var Collection<int, Stars>
      */
-    #[ORM\ManyToMany(targetEntity: Stars::class, inversedBy: 'stars')]
+    #[ORM\ManyToMany(targetEntity: Stars::class, inversedBy: 'films')]
     private Collection $stars;
 
     public function __construct()
     {
-        $this -> stars = new ArrayCollection();
+        $this->stars = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
-        return $this -> id;
+        return $this->id;
     }
 
     public function getTitle(): ?string
     {
-        return $this -> title;
+        return $this->title;
     }
 
-    public function setTitle(string $title): static
+    public function setTitle(string $title): self
     {
-        $this -> title = $title;
+        $this->title = $title;
 
         return $this;
     }
 
     public function getGenres(): ?string
     {
-        return $this -> genres;
+        return $this->genres;
     }
 
-    public function setGenres(string $genres): static
+    public function setGenres(string $genres): self
     {
-        $this -> genres = $genres;
+        $this->genres = $genres;
 
         return $this;
     }
 
     public function getYear(): ?int
     {
-        return $this -> year;
+        return $this->year;
     }
 
-    public function setYear(?int $year): static
+    public function setYear(int $year): self
     {
-        $this -> year = $year;
+        $this->year = $year;
 
         return $this;
     }
 
     public function getDirector(): ?string
     {
-        return $this -> director;
+        return $this->director;
     }
 
-    public function setDirector(?string $director): static
+    public function setDirector(string $director): self
     {
-        $this -> director = $director;
+        $this->director = $director;
 
         return $this;
     }
 
     public function getPoster(): ?string
     {
-        return $this -> poster;
+        return $this->poster;
     }
 
-    public function setPoster(string $poster): static
+    public function setPoster(string $poster): self
     {
-        $this -> poster = $poster;
+        $this->poster = $poster;
 
         return $this;
     }
 
     public function getMainActors(): ?string
     {
-        return $this -> mainActors;
+        return $this->mainActors;
     }
 
-    public function setMainActors(?string $mainActors): static
+    public function setMainActors(string $mainActors): self
     {
-        $this -> mainActors = $mainActors;
+        $this->mainActors = $mainActors;
 
         return $this;
     }
 
     public function getSynopsis(): ?string
     {
-        return $this -> synopsis;
+        return $this->synopsis;
     }
 
-    public function setSynopsis(string $synopsis): static
+    public function setSynopsis(string $synopsis): self
     {
-        $this -> synopsis = $synopsis;
+        $this->synopsis = $synopsis;
 
         return $this;
     }
@@ -141,21 +142,21 @@ class Film{
      */
     public function getStars(): Collection
     {
-        return $this -> stars;
+        return $this->stars;
     }
 
-    public function addZone(Stars $stars): static
+    public function addStar(Stars $star): self
     {
-        if (!$this -> stars -> contains($stars)) {
-            $this -> stars -> add($stars);
+        if (!$this->stars->contains($star)) {
+            $this->stars->add($star);
         }
 
         return $this;
     }
 
-    public function removeStars(Stars $stars): static
+    public function removeStar(Stars $star): self
     {
-        $this -> stars -> removeElement($stars);
+        $this->stars->removeElement($star);
 
         return $this;
     }

@@ -28,7 +28,7 @@ class FilmController extends AbstractController{
         return $this -> render('films/listFilms.html.twig', ['films' => $films]);
     }
 
-    #[Route('new/pisos')]
+    #[Route('new/films')]
     public function insertFilms(EntityManagerInterface $doctrine){
     $film = new Film();
     $film -> setTitle('The Matrix');
@@ -130,43 +130,43 @@ class FilmController extends AbstractController{
     $film10 -> setSynopsis('A musician helps a young singer find fame as age and alcoholism send his own career into a downward spiral.');
     
     $stars1 = new Stars();
-    $stars1 = setName('1 ⭐');
+    $stars1 -> setName('1 ⭐');
 
     $stars2 = new Stars();
-    $stars2 = setName('1,5 ⭐');
+    $stars2 -> setName('1,5 ⭐');
 
     $stars3 = new Stars();
-    $stars3 = setName('2 ⭐');
+    $stars3 -> setName('2 ⭐');
 
     $stars4 = new Stars();
-    $stars4 = setName('2,5 ⭐');
+    $stars4 -> setName('2,5 ⭐');
 
     $stars5 = new Stars();
-    $stars5 = setName('3 ⭐');
+    $stars5 -> setName('3 ⭐');
 
     $stars6 = new Stars();
-    $stars6 = setName('3,5 ⭐');
+    $stars6 -> setName('3,5 ⭐');
 
     $stars7 = new Stars();
-    $stars7 = setName('4 ⭐');
+    $stars7 -> setName('4 ⭐');
 
     $stars8 = new Stars();
-    $stars8 = setName('4,5 ⭐');
+    $stars8 -> setName('4,5 ⭐');
 
     $stars9 = new Stars();
-    $stars9 = setName('5 ⭐');
+    $stars9 -> setName('5 ⭐');
 
-    $film = addStars($stars7);
-    $film1 = addStars($stars8);
-    $film2 = addStars($stars7);
-    $film3 = addStars($stars4);
-    $film4 = addStars($stars6);
-    $film5 = addStars($stars6);
-    $film6 = addStars($stars5);
-    $film7 = addStars($stars8);
-    $film8 = addStars($stars5);
-    $film9 = addStars($stars5);
-    $film10 = addStars($stars5);
+    $film -> addStars($stars7);
+    $film1 -> addStars($stars8);
+    $film2 -> addStars($stars7);
+    $film3 -> addStars($stars4);
+    $film4 -> addStars($stars6);
+    $film5 -> addStars($stars6);
+    $film6 -> addStars($stars5);
+    $film7 -> addStars($stars8);
+    $film8 -> addStars($stars5);
+    $film9 -> addStars($stars5);
+    $film10 -> addStars($stars5);
 
     $doctrine -> persist($film);
     $doctrine -> persist($film1);
@@ -221,20 +221,20 @@ class FilmController extends AbstractController{
         $form = $this -> createForm(FilmType::class, $film);
         $form -> handleRequest($request);
 
-        if($form -> isSubtituted() && $form -> isValid()){
+        if($form -> isSubmitted() && $form -> isValid()){
             $film = $form -> getData();
             $doctrine -> persist($film);
             $doctrine -> flush();
 
             $this -> addFlash(type: 'Success', message: 'Pelicula editada correctamente');
 
-            return $this -> redirectToRoute('FilmsList');
+            return $this -> redirectToRoute('filmsList');
         }
 
         return $this -> render('films/newFilm.html.twig', ['filmForm' => $form]);
     }
 
-    #[Route('/delete/piso/{id}', name: 'deleteFilm')]
+    #[Route('/delete/film/{id}', name: 'deleteFilm')]
     public function deleteFilm(EntityManagerInterface $doctrine, Request $request, $id){
         $repository = $doctrine -> getRepository(Film::class);
         $film = $repository -> find($id);
@@ -242,6 +242,6 @@ class FilmController extends AbstractController{
         $doctrine -> remove($film);
         $doctrine -> flush();
 
-        return $this -> redirectToRoute('FilmsList');
+        return $this -> redirectToRoute('filmsList');
     }
 }

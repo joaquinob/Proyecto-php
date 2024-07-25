@@ -1,0 +1,10 @@
+{# templates/user/newAdmin.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Crear Nuevo Administrador</h1>
+    {{ form_start(userForm) }}
+        {{ form_widget(userForm) }}
+        <button class="btn">Crear Administrador</button>
+    {{ form_end(userForm) }}
+{% endblock %}

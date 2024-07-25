@@ -28,19 +28,18 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', $user::class));
         }
 
-        $user -> setPassword($newHashedPassword);
-        $this -> getEntityManager() -> persist($user);
-        $this -> getEntityManager() -> flush();
+        $user->setPassword($newHashedPassword);
+        $this->getEntityManager()->persist($user);
+        $this->getEntityManager()->flush();
     }
 
     /**
      * @return User[] Returns an array of User objects
      */
-    public function findByExampleField($value): array
+    public function findByExampleField(string $value): array
     {
-        return $this
-            ->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.email = :val')  // Assuming you want to filter by email
             ->setParameter('val', $value)
             ->orderBy('u.id', 'ASC')
             ->setMaxResults(10)
@@ -48,10 +47,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getResult();
     }
 
-    public function findOneBySomeField($value): ?User{
-        return $this
-            ->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
+    public function findOneBySomeField(string $value): ?User
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.email = :val')  // Assuming you want to filter by email
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult();

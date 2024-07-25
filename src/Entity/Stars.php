@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\LocationRepository;
+use App\Repository\StarsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StarsRepository::class)]
-class Stars{
+class Stars
+{
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -18,14 +19,14 @@ class Stars{
     private ?string $name = null;
 
     /**
-     *@var Collection<int, Film>
+     * @var Collection<int, Film>
      */
     #[ORM\ManyToMany(targetEntity: Film::class, mappedBy: 'stars')]
-    private Collection $stars;
+    private Collection $films; // Cambié el nombre de la propiedad a 'films'
 
     public function __construct()
     {
-        $this -> stars = new ArrayCollection();
+        $this->films = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -38,7 +39,7 @@ class Stars{
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -48,25 +49,25 @@ class Stars{
     /**
      * @return Collection<int, Film>
      */
-    public function getStars(): Collection
+    public function getFilms(): Collection
     {
-        return $this -> stars;
+        return $this->films;
     }
 
-    public function addStars(Film $stars): static
+    public function addFilm(Film $film): self
     {
-        if (!$this -> stars-> contains($stars)) {
-            $this -> stars -> add($stars);
-            $stars->addStars($this);
+        if (!$this->films->contains($film)) {
+            $this->films->add($film);
+            $film->addStar($this); // Asegúrate de que la relación es bidireccional
         }
 
         return $this;
     }
 
-    public function removeStars(Film $stars): static
+    public function removeFilm(Film $film): self
     {
-        if ($this->stars->removeElement($stars)) {
-            $stars->removeStars($this);
+        if ($this->films->removeElement($film)) {
+            $film->removeStar($this); // Asegúrate de que la relación es bidireccional
         }
 
         return $this;
