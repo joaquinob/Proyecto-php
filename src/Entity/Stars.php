@@ -58,7 +58,7 @@ class Stars
     {
         if (!$this->films->contains($film)) {
             $this->films->add($film);
-            $film->addStar($this); // Asegúrate de que la relación es bidireccional
+            $film->addStars($this); // Asegúrate de que la relación es bidireccional
         }
 
         return $this;
