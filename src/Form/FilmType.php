@@ -46,7 +46,7 @@ class FilmType extends AbstractType
             ->add('stars', EntityType::class, [
                 'class' => Stars::class,
                 'choice_label' => 'name',
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => true,
                 'label' => 'Estrellas'
             ])

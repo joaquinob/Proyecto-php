@@ -156,17 +156,17 @@ class FilmController extends AbstractController{
     $stars9 = new Stars();
     $stars9 -> setName('5 ⭐');
 
-    $film -> addStars($stars7);
-    $film1 -> addStars($stars8);
-    $film2 -> addStars($stars7);
-    $film3 -> addStars($stars4);
-    $film4 -> addStars($stars6);
-    $film5 -> addStars($stars6);
-    $film6 -> addStars($stars5);
-    $film7 -> addStars($stars8);
-    $film8 -> addStars($stars5);
-    $film9 -> addStars($stars5);
-    $film10 -> addStars($stars5);
+    $film -> addStar($stars7);
+    $film1 -> addStar($stars8);
+    $film2 -> addStar($stars7);
+    $film3 -> addStar($stars4);
+    $film4 -> addStar($stars6);
+    $film5 -> addStar($stars6);
+    $film6 -> addStar($stars5);
+    $film7 -> addStar($stars8);
+    $film8 -> addStar($stars5);
+    $film9 -> addStar($stars5);
+    $film10 -> addStar($stars5);
 
     $doctrine -> persist($film);
     $doctrine -> persist($film1);
@@ -210,7 +210,7 @@ class FilmController extends AbstractController{
             return $this -> redirectToRoute('filmsList');
         }
 
-        return $this -> render('films/newFillm.html.twig', ['filmForm' => $form]);
+        return $this -> render('films/newFilm.html.twig', ['filmForm' => $form]);
     }
 
     #[Route('/edit/film/{id}', name: 'editFilm')]
