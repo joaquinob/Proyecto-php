@@ -16,10 +16,10 @@
                     <img src="{{film.poster}}" class="card-img-top">
                     <div class="card-body">
                         <h3 class="card-title">{{film.title}}</h3>
-                        <h3 class="card-title">{{film.director}}</h3>
-                        <h5 class="card-text">{{film.mainActors }}</h5>
-                        <h5 class="card-text">{{film.year}}, {{film.genres}}</h5>
-                        <p class="card-text">{{film.synopsis}}</p>
+                        {# <h3 class="card-title">{{film.director}}</h3> #}
+                        {# <h5 class="card-text">{{film.mainActors }}</h5> #}
+                        {# <h5 class="card-text">{{film.year}}, {{film.genres}}</h5> #}
+                        {# <p class="card-text">{{film.synopsis}}</p> #}
                         <a href="{{ path('showFilms', {'id': film.id}) }}" class="btn btn-primary">Más Info</a>
 
                         {% if is_granted('ROLE_ADMIN') %}                      

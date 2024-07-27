@@ -3,31 +3,31 @@
 
 {% block contenido %}
 
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center"><img src="{{ film.poster }}"> </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h2>{{ film.title }}</h2>
-                        <h2>{{ film.director }}</h2>
+            <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ film.poster }}" class="card-img-top" alt="poster">
+                    <div class="card-body">
+                        <h2 class="card-text">{{ film.title }}</h2>
                     </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="col">{{ film.mainActors }}</div>
-                             <div class="col"><h5>Año {{ film.year }},  {{film.genres}}</h5></div>
-                             <p>{{film.synopsis }}</p>
-
+                </div>
+                <div>
+                    <div class="card" style="width: 50rem;">
+                        <div class="">
+                            <h2 class="">{{ film.director }}</h2>
+                            <h2 class="">{{ film.mainActors }}</h2>
+                            <h2 class="">Año {{ film.year }},  {{film.genres}}</h2>
+                            <h2 class="">{{film.synopsis }}</h2>
                         </div>
+                    </div>
+                </div>
+                
                         {# <div class="row">
                             <ul>
                             {% for z in  film.stars %}
-                             <h5>Calificación {{z.stars}}</h5>
+                             <h5>Cah2ficación {{z.stars}}</h5>
                              {% endfor %}
                             </ul>
                         </div> #}
-                    </div>
-                </div>
             </div>
 
 {% endblock %}            

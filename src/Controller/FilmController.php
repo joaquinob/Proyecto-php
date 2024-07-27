@@ -34,7 +34,7 @@ class FilmController extends AbstractController{
     $film -> setTitle('The Matrix');
     $film -> setGenres('Action', 'Sci-Fi');
     $film -> setYear(1999);
-    $film -> setPoster('https://www.filmaffinity.com/imgs/movies/full/61/613505.jpg');
+    $film -> setPoster('https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg');
     $film -> setMainActors('Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss');
     $film -> setDirector('Lana Wachowski, Lilly Wachowski');
     $film -> setSynopsis('A hacker discovers the hidden truth behind his reality and joins a rebellion to free humanity from a machine-controlled simulation.');
@@ -43,7 +43,7 @@ class FilmController extends AbstractController{
     $film1 -> setTitle('Se7en');
     $film1 -> setGenres('Drama', 'Thriller');
     $film1 -> setYear(1995);
-    $film1 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/56/569179.jpg');
+    $film1 -> setPoster('https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg');
     $film1 -> setMainActors('Brad Pitt', 'Morgan Freeman', 'Gwyneth Paltrow');
     $film1 -> setDirector('David Fincher');
     $film1 -> setSynopsis('Two detectives investigate a series of murders inspired by the seven deadly sins.');
@@ -52,7 +52,7 @@ class FilmController extends AbstractController{
     $film2 -> setTitle('Toy Story 3');
     $film2 -> setGenres('Animation', 'Adventure');
     $film2 -> setYear(2010);
-    $film2 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/30/305098.jpg');
+    $film2 -> setPoster('https://upload.wikimedia.org/wikipedia/en/6/69/Toy_Story_3_poster.jpg');
     $film2 -> setMainActors('Tom Hanks', 'Tim Allen', 'Joan Cusack');
     $film2 -> setDirector('Lee Unkrich');
     $film2 -> setSynopsis('Woody, Buzz Lightyear, and the rest of the toys face uncertainty as their owner, Andy, prepares to go to college.');
@@ -61,7 +61,7 @@ class FilmController extends AbstractController{
     $film3 -> setTitle('Thor: Love and Thunder');
     $film3 -> setGenres('Action', 'Adventure');
     $film3 -> setYear(2022);
-    $film3 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/100/100930.jpg');
+    $film3 -> setPoster('https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg');
     $film3 -> setMainActors('Chris Hemsworth', 'Natalie Portman', 'Tom Hiddleston');
     $film3 -> setDirector('Taika Waititi');
     $film3 -> setSynopsis('Thor must save the universe once again as new threats emerge, testing his strength and resolve.');
@@ -70,7 +70,7 @@ class FilmController extends AbstractController{
     $film4 -> setTitle('La La Land');
     $film4 -> setGenres('Comedy', 'Romance');
     $film4 -> setYear(2016);
-    $film4 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/200/200345.jpg');
+    $film4 -> setPoster('https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_.jpg');
     $film4 -> setMainActors('Emma Stone', 'Ryan Gosling', 'John Legend');
     $film4 -> setDirector('Damien Chazelle');
     $film4 -> setSynopsis('A jazz musician and an aspiring actress navigate their careers and relationship in modern-day Los Angeles.');
@@ -79,7 +79,7 @@ class FilmController extends AbstractController{
     $film5 -> setTitle('Arrival');
     $film5 -> setGenres('Sci-Fi', 'Thriller');
     $film5 -> setYear(2016);
-    $film5 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/300/300254.jpg');
+    $film5 -> setPoster('https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_.jpg');
     $film5 -> setMainActors('Amy Adams', 'Jeremy Renner', 'Forest Whitaker');
     $film5 -> setDirector('Denis Villeneuve');
     $film5 -> setSynopsis('A linguist works with the military to communicate with alien life forms after they land on Earth.');
@@ -88,7 +88,7 @@ class FilmController extends AbstractController{
     $film6 -> setTitle('The Post');
     $film6 -> setGenres('Drama', 'Biography');
     $film6 -> setYear(2017);
-    $film6 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/400/400223.jpg');
+    $film6 -> setPoster('https://upload.wikimedia.org/wikipedia/en/0/0b/The_Post_%28film%29.png');
     $film6 -> setMainActors('Meryl Streep', 'Tom Hanks', 'Sarah Paulson');
     $film6 -> setDirector('Steven Spielberg');
     $film6 -> setSynopsis('The story of the Washington Post\'s attempt to publish the Pentagon Papers, detailing the government\'s secret history of the Vietnam War.');
@@ -97,7 +97,7 @@ class FilmController extends AbstractController{
     $film7 -> setTitle('Hereditary');
     $film7 -> setGenres('Horror', 'Thriller');
     $film7 -> setYear(2018);
-    $film7 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/500/500112.jpg');
+    $film7 -> setPoster('https://play-lh.googleusercontent.com/mQI5E1NfYmJLQogeiKVw4dEsxl_KlDY3k_mHloBc-riizqI8SikBXlK1E5GRkgghfZo');
     $film7 -> setMainActors('Toni Collette', 'Alex Wolff', 'Milly Shapiro');
     $film7 -> setDirector('Ari Aster');
     $film7 -> setSynopsis('After the family matriarch passes away, a grieving family is haunted by tragic and disturbing occurrences.');
@@ -106,7 +106,7 @@ class FilmController extends AbstractController{
     $film8 -> setTitle('Onward');
     $film8 -> setGenres('Animation', 'Family');
     $film8 -> setYear(2020);
-    $film8 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/600/600321.jpg');
+    $film8 -> setPoster('https://m.media-amazon.com/images/M/MV5BMTZlYzk3NzQtMmViYS00YWZmLTk5ZTEtNWE0NGVjM2MzYWU1XkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_.jpg');
     $film8 -> setMainActors('Tom Holland', 'Chris Pratt', 'Julia Louis-Dreyfus');
     $film8 -> setDirector('Dan Scanlon');
     $film8 -> setSynopsis('Two teenage elf brothers embark on a quest to discover if there is still magic left in their world.');
@@ -115,7 +115,7 @@ class FilmController extends AbstractController{
     $film9 -> setTitle('No Time to Die');
     $film9 -> setGenres('Action', 'Crime');
     $film9 -> setYear(2021);
-    $film9 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/700/700102.jpg');
+    $film9 -> setPoster('https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg');
     $film9 -> setMainActors('Daniel Craig', 'Ana de Armas', 'Rami Malek');
     $film9 -> setDirector('Cary Joji Fukunaga');
     $film9 -> setSynopsis('James Bond has left active service. His peace is short-lived when Felix Leiter, an old friend from the CIA, turns up asking for help.');
@@ -124,7 +124,7 @@ class FilmController extends AbstractController{
     $film10 -> setTitle('A Star Is Born');
     $film10 -> setGenres('Comedy', 'Drama');
     $film10 -> setYear(2018);
-    $film10 -> setPoster('https://www.filmaffinity.com/imgs/movies/full/800/800211.jpg');
+    $film10 -> setPoster('https://m.media-amazon.com/images/M/MV5BNmE5ZmE3OGItNTdlNC00YmMxLWEzNjctYzAwOGQ5ODg0OTI0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg');
     $film10 -> setMainActors('Bradley Cooper', 'Lady Gaga', 'Sam Elliott');
     $film10 -> setDirector('Bradley Cooper');
     $film10 -> setSynopsis('A musician helps a young singer find fame as age and alcoholism send his own career into a downward spiral.');
